@@ -49,6 +49,8 @@ pip install uv
 ### 2. Create Environment & Install Dependencies
 
 ```bash
+git clone https://github.com/rachit6105/Sketch-2-Image.git
+cd Sketch-2-Image
 uv sync
 ```
 
