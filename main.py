@@ -33,9 +33,9 @@ pipe = StableDiffusionControlNetPipeline.from_pretrained(
     torch_dtype=torch.float16
 ).to(device)
 
-# pipe.scheduler = DPMSolverSDEScheduler.from_config(pipe.scheduler.config,use_karras_sigmas=True)
-# pipe.load_lora_weights("Skin Tone Slider - LoRA_v1.0.safetensors", adapter_name="skin_tone")
-# pipe.set_adapters(["skin_tone"], adapter_weights=[5.0])
+pipe.scheduler = DPMSolverSDEScheduler.from_config(pipe.scheduler.config,use_karras_sigmas=True)
+pipe.load_lora_weights("Skin Tone Slider - LoRA_v1.0.safetensors", adapter_name="skin_tone")
+pipe.set_adapters(["skin_tone"], adapter_weights=[5.0])
 # 4. Load inputs
 target_size = (512, 512)
 path = '143.jpg'
