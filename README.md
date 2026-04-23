@@ -137,7 +137,7 @@ Then display:
 * Limited dataset size
 * Identity drift in generated faces
 * Sensitive to sketch quality
-* You can read [this](research/research.md) to see my failed attempts and tests.
+* You can read [this](research/research.md) to see our failed attempts and tests.
 
 ## Future Work
 
