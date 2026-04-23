@@ -28,10 +28,12 @@ This repository implements a pipeline for converting forensic or hand-drawn sket
 ├── main.py
 ├── test.py
 ├── media/                 # Assets, diagrams, or documentation images
-├── results/               # Generated outputs
+├── results/
+├── research/              # Things I tried 
+|   ├── generated_photos/
+|   └── faceid/ 
 ├── test_dataset/
-│   ├── clinical_desc/     # Textual descriptions (if used)
-│   ├── generated_photos/  # Model outputs
+│   ├── clinical_desc/     # Textual descriptions
 │   ├── test_photos/       # Ground truth images
 │   └── test_sketches/     # Input sketches
 ├── requirements.txt
@@ -53,6 +55,8 @@ pip install uv
 ### 2. Create Environment & Install Dependencies
 
 ```bash
+git clone https://github.com/rachit6105/Sketch-2-Image.git
+cd Sketch-2-Image
 uv sync
 ```
 

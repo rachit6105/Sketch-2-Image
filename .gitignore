@@ -6,6 +6,8 @@ dist/
 .vscode/
 wheels/
 *.egg-info
-
+ddpm/dataset/*
+!ddpm/dataset/README.md
+ddpm/model.pth
 # Virtual environments
 .venv
