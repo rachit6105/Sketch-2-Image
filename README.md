@@ -26,6 +26,7 @@ This repository implements a pipeline for converting forensic or hand-drawn sket
 ```
 .
 ├── main.py
+├── app.py
 ├── test.py
 ├── media/                 # Assets, diagrams, or documentation images
 ├── results/
@@ -81,6 +82,13 @@ source .venv/bin/activate
 ---
 
 ## Usage
+### Generate from gradio UI
+
+```bash
+python app.py
+```
+
+---
 
 ### Generate Image from Sketch
 
