@@ -4,6 +4,21 @@
 
 This repository implements a pipeline for converting forensic or hand-drawn sketches into realistic facial images using ControlNet-based diffusion models. It also includes an evaluation module that verifies identity similarity between generated images and real photos using facial recognition.
 
+![Proposed System Architecture](media/UGP_Architecture.svg)
+
+*Figure 1: The training pipeline utilizes a Vision-LLM to generate ground-truth clinical descriptions, which subsequently condition the ControlNet and LoRA-infused Stable Diffusion model.*
+
+---
+
+## Features
+
+* Sketch-to-photo generation using ControlNet
+* Multiple conditioning modes (lineart, canny, scribble)
+* Realistic face synthesis using high-quality pretrained models
+* Identity verification using facial recognition
+* Managed environment using **uv (Astral)**
+* You can download complete dataset folowing [dataset.md](test_dataset/dataset.md)
+
 ---
 
 ## Repository Structure
@@ -24,17 +39,6 @@ This repository implements a pipeline for converting forensic or hand-drawn sket
 ├── uv.lock
 └── README.md
 ```
-
----
-
-## Features
-
-* Sketch-to-photo generation using ControlNet
-* Multiple conditioning modes (lineart, canny, scribble)
-* Realistic face synthesis using high-quality pretrained models
-* Identity verification using facial recognition
-* Managed environment using **uv (Astral)**
-* You can download complete dataset folowing [dataset.md](test_dataset/dataset.md)
 
 ---
 
