@@ -49,7 +49,7 @@ except Exception as e:
 # --- Skin Tone Slider LoRA ---
 SKIN_LORA_LOADED = False
 try:
-    pipe.load_lora_weights("modelweights/skintone.safetensors", adapter_name="skin_tone")
+    pipe.load_lora_weights("modelweights/skintone2.safetensors", adapter_name="skin_tone")
     SKIN_LORA_LOADED = True
     print("Skin tone LoRA loaded!")
 except Exception as e:
@@ -85,13 +85,13 @@ def generate_composite(sketch_image, description, forensic_weight, skin_tone_wei
     text_prompt = (
         f"{description}. "
         f"Raw amateur photo, DMV camera mugshot, (extreme skin texture:1.4), (visible pores:1.3), "
-        f"hyper-detailed unairbrushed skin, uneven skin tone, harsh flash lighting, ugly, documentary photography."
+        f"hyper-detailed unairbrushed skin, harsh flash lighting, documentary photography."
     )
     negative_prompt = (
         "deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime:1.4, "
-        "text, close up, cropped, out of frame, worst quality, jpeg artifacts, ugly, duplicate, "
-        "airbrushed, retouched, smooth skin, perfect skin, makeup, foundation, instagram, glamour shot, ultra-HD, 4K, "
-        "studio lighting, soft focus, plastic, doll, 3d render, beauty filter, symmetrical face, childish, idealized"
+        "text, close up, cropped, out of frame, worst quality, jpeg artifacts, "
+        "airbrushed, retouched, makeup, foundation, instagram, glamour shot, ultra-HD, 4K, "
+        "studio lighting, soft focus, plastic, doll, 3d render, beauty filter"
     )
 
     # Build active adapter list dynamically based on what loaded
@@ -154,12 +154,12 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
 
             gr.Markdown("### 2. LoRA Sliders")
             slider_forensic = gr.Slider(
-                minimum=0.0, maximum=1.5, value=1.0, step=0.1,
+                minimum=0.0, maximum=1.5, value=0.6, step=0.1,
                 label="Forensic Style Strength",
                 interactive=FORENSIC_LORA_LOADED
             )
             slider_skin = gr.Slider(
-                minimum=-3.0, maximum=3.0, value=0.0, step=0.1,
+                minimum=-5.0, maximum=5.0, value=0.0, step=0.1,
                 label="Skin Tone (Darker ➔ Lighter)",
                 interactive=SKIN_LORA_LOADED
             )
